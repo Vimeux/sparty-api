@@ -1,0 +1,25 @@
+{
+  "name": "sparty-api",
+  "version": "1.0.0",
+  "description": "api for Sparty app",
+  "main": "index.js",
+  "author": "Benjamin Vimeux",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15",
+    "standard": "^16.0.4"
+  }
+}
