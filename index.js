@@ -27,6 +27,7 @@ app.get('/', (request, response) => {
 
 app.use(router)
 app.use('/me', require('./routes/users'))
+app.use('/auth', require('./routes/users/auth'))
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
