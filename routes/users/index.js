@@ -10,7 +10,7 @@ router.route('/')
   .get(withAuth, (req, res) => {
     const id = extractIdFromRequestAuthHeader(req)
 
-    db.query('SELECT * FROM "user" where id = $1', [id], (err, result) => {
+    db.query('SELECT firstname, lastname, email, phone, place_id, identity_card_id, payement_account_id FROM "user" where id = $1', [id], (err, result) => {
       if (err) return res.status(500).send({ message: 'invalids credentials' })
       res.send(result.rows[0])
     })
