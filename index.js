@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }))
 // Prise en charge du JSON.
 app.use(express.json())
 
+// on définit le chemin des fichiers statiques
+app.use(express.static('public'))
+app.use('/uploads', express.static('uploads'))
+
 const router = express.Router()
 
 const port = process.env.PORT
@@ -27,6 +31,8 @@ app.get('/', (request, response) => {
 
 app.use(router)
 app.use('/me', require('./routes/users'))
+app.use('/me/identity', require('./routes/users/identity'))
+app.use('/auth', require('./routes/users/auth'))
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
